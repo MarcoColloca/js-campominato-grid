@@ -4,84 +4,41 @@ console.log('JS Trial')
 /// ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ Mie Funzioni ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ \\\
 
 function gameClickStart(){
+
+    let gridSide = parseInt(difficultySelectorDOMElement.value);
+    const numOfCells = gridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
+
+    for(let i = 0; i < numOfCells; i++){
+
+        const cellDOMElement = document.createElement('div');
+        let divClass = 'square-easy'
+
+        const cellNumber = i + 1;
+        cellDOMElement.innerHTML = cellNumber;
+
+
+        if(difficultySelectorDOMElement.value === '10'){
+     
+            divClass = 'square-hard';
+        
+        } else if(difficultySelectorDOMElement.value === '9'){
+      
+            divClass = 'square-medium';
+           
+        } 
+
+        cellDOMElement.classList.add(divClass)
+        gridDOMElement.appendChild(cellDOMElement)
+
+        cellDOMElement.addEventListener('click', function(){
+        
+            console.log('Hai clickato la cella numero ', cellNumber)
     
-    
-    // console.log(gridDOMElement.className)
-    if(difficultySelectorDOMElement.value === 'hard'){
-
-        const hardGridSide = 10;
-        const numOfCells = hardGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
-    
-        for(let i = 0; i < numOfCells; i++){
-            const cellNumber = i + 1;
-            // console.log(cellNumber);
-        
-            const cellDOMElement = document.createElement('div');
-            cellDOMElement.className = 'square-hard';
-            cellDOMElement.innerHTML = cellNumber;
-        
-            gridDOMElement.appendChild(cellDOMElement)
-        
-        
-            cellDOMElement.addEventListener('click', function(){
-        
-                console.log('Hai clickato la cella numero ', cellNumber)
-        
-                cellDOMElement.classList.toggle('bg-azure')
-            })
-        }
-
-    } else if(difficultySelectorDOMElement.value === 'medium'){
-
-        const mediumGridSide = 9;
-        const numOfCells = mediumGridSide ** 2 // ** significa elevato a, quindi si ottiene 9 x 9    
-
-        for(let i = 0; i < numOfCells; i++){
-            const cellNumber = i + 1;
-            // console.log(cellNumber);
-        
-            const cellDOMElement = document.createElement('div');
-            cellDOMElement.className = 'square-medium';
-            cellDOMElement.innerHTML = cellNumber;
-        
-            gridDOMElement.appendChild(cellDOMElement)
-        
-        
-            cellDOMElement.addEventListener('click', function(){
-        
-                console.log('Hai clickato la cella numero ', cellNumber)
-        
-                cellDOMElement.classList.toggle('bg-azure')
-            })
-        }
-
-    } else if (difficultySelectorDOMElement.value === 'easy'){
-
-        const easyGridSide = 7;
-        const numOfCells = easyGridSide ** 2 // ** significa elevato a, quindi si ottiene 7 x 7    
-
-        for(let i = 0; i < numOfCells; i++){
-            const cellNumber = i + 1;
-            // console.log(cellNumber);
-        
-            const cellDOMElement = document.createElement('div');
-            cellDOMElement.className = 'square-easy';
-            cellDOMElement.innerHTML = cellNumber;
-        
-            gridDOMElement.appendChild(cellDOMElement)
-        
-        
-            cellDOMElement.addEventListener('click', function(){
-        
-                console.log('Hai clickato la cella numero ', cellNumber)
-        
-                cellDOMElement.classList.toggle('bg-azure')
-            })
-        }
+            cellDOMElement.classList.toggle('bg-azure')
+        })
     }
 
     startButtonDOMElement.removeEventListener('click', gameClickStart);
-    //console.log(gridDOMElement.className)
 }
 
 
@@ -100,18 +57,17 @@ function gameClickReset(){
 
 
 
+
+
+
+
 const gridDOMElement = document.getElementById('grid'); // object
-// console.log(gridDOMElement)
 
 const startButtonDOMElement = document.getElementById('generate-grid'); // object
-// console.log(startButtonDOMElement);
 
 const difficultySelectorDOMElement = document.getElementById('difficulty-selection')
-// console.log(difficultySelectorDOMElement)
-// console.log(difficultySelectorDOMElement.value)
 
 const restartButtonDOMElement = document.getElementById('delete-grid')
-// console.log(restartButtonDOMElement)
 
 
 
