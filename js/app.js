@@ -11,13 +11,13 @@ const difficultySelectorDOMElement = document.getElementById('difficulty-selecti
 // console.log(difficultySelectorDOMElement.value)
 
 const restartButtonDOMElement = document.getElementById('delete-grid')
-console.log(restartButtonDOMElement)
+// console.log(restartButtonDOMElement)
 
 
 
 startButtonDOMElement.addEventListener('click', function(){
     
-    console.log(gridDOMElement.className)
+    // console.log(gridDOMElement.className)
     if(difficultySelectorDOMElement.value === 'hard' && gridDOMElement.className === ''){
 
         const hardGridSide = 10;
@@ -90,7 +90,6 @@ startButtonDOMElement.addEventListener('click', function(){
             })
         }
     }
-
 
     gridDOMElement.classList.add('active')
     //console.log(gridDOMElement.className)
