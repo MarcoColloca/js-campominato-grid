@@ -69,7 +69,9 @@ const difficultySelectorDOMElement = document.getElementById('difficulty-selecti
 const restartButtonDOMElement = document.getElementById('delete-grid') //object
 
 
-
+// Creazione delle varie griglie tramite funzione definita sopra
 startButtonDOMElement.addEventListener('click', gameClickStart);
 
+
+// Reset delle griglie tramite funzione definita sopra
 restartButtonDOMElement.addEventListener('click', gameClickReset);
