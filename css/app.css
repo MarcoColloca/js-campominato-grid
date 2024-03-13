@@ -11,7 +11,7 @@
 
 
 body{
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(129, 129, 129);
 }
 
 
@@ -27,4 +27,9 @@ body{
     width: 10%;
     aspect-ratio: 1/1;
     border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+    color: white;
 }
