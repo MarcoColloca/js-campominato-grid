@@ -69,20 +69,42 @@ body{
     flex-wrap: wrap;
 }
 
-
-.square{
-    width: 10%;
-    aspect-ratio: 1/1;
+.square-easy, 
+.square-medium, 
+.square-hard{
     border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(31, 31, 31);
     color: white;
+
 }
+
+
+.square-hard{
+    width: 10%;
+    aspect-ratio: 1/1;
+}
+
+.square-medium{
+    width: calc(100%/9);
+    aspect-ratio: 1/1;
+}
+
+
+.square-easy{
+    width: calc(100%/7);
+    aspect-ratio: 1/1;
+}
+
 
 /* Selected Grid Cell */
 
 .bg-azure{
     background-color: rgb(0, 91, 196);
+}
+
+.bg-red{
+    background-color: brown;
 }

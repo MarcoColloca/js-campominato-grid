@@ -6,21 +6,75 @@ const gridDOMElement = document.getElementById('grid'); // object
 const startButtonDOMElement = document.getElementById('generate-grid'); // object
 console.log(startButtonDOMElement);
 
+const difficultySelectorDOMElement = document.getElementById('difficulty-selection')
+console.log(difficultySelectorDOMElement)
+console.log(difficultySelectorDOMElement.value)
+
+
 
 
 startButtonDOMElement.addEventListener('click', function(){
     
-    const gridSide = 10
-    const numOfCells = gridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10
     console.log(gridDOMElement.className)
-    if(gridDOMElement.className === ''){
+    if(difficultySelectorDOMElement.value === 'hard'){
+
+        const hardGridSide = 10;
+        const numOfCells = hardGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
 
         for(let i = 0; i < numOfCells; i++){
             const cellNumber = i + 1;
             // console.log(cellNumber);
         
             const cellDOMElement = document.createElement('div');
-            cellDOMElement.className = 'square';
+            cellDOMElement.className = 'square-hard';
+            cellDOMElement.innerHTML = cellNumber;
+        
+            gridDOMElement.appendChild(cellDOMElement)
+        
+        
+            cellDOMElement.addEventListener('click', function(){
+        
+                console.log('Hai clickato la cella numero ', cellNumber)
+        
+                cellDOMElement.classList.toggle('bg-azure')
+            })
+        }
+
+    } else if(difficultySelectorDOMElement.value === 'medium'){
+
+        const mediumGridSide = 9;
+        const numOfCells = mediumGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
+
+        for(let i = 0; i < numOfCells; i++){
+            const cellNumber = i + 1;
+            // console.log(cellNumber);
+        
+            const cellDOMElement = document.createElement('div');
+            cellDOMElement.className = 'square-medium';
+            cellDOMElement.innerHTML = cellNumber;
+        
+            gridDOMElement.appendChild(cellDOMElement)
+        
+        
+            cellDOMElement.addEventListener('click', function(){
+        
+                console.log('Hai clickato la cella numero ', cellNumber)
+        
+                cellDOMElement.classList.toggle('bg-azure')
+            })
+        }
+
+    } else if (difficultySelectorDOMElement.value === 'easy'){
+
+        const easyGridSide = 7;
+        const numOfCells = easyGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
+
+        for(let i = 0; i < numOfCells; i++){
+            const cellNumber = i + 1;
+            // console.log(cellNumber);
+        
+            const cellDOMElement = document.createElement('div');
+            cellDOMElement.className = 'square-easy';
             cellDOMElement.innerHTML = cellNumber;
         
             gridDOMElement.appendChild(cellDOMElement)
@@ -34,6 +88,8 @@ startButtonDOMElement.addEventListener('click', function(){
             })
         }
     }
-    gridDOMElement.classList.add('hard')
-    console.log(gridDOMElement.className)
+
+
+    //gridDOMElement.classList.add('hard')
+    //console.log(gridDOMElement.className)
 })
