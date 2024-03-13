@@ -53,6 +53,13 @@ body{
 }
 
 
+#generate-grid{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+}
+
 
 
 /* Grid and Squares */
