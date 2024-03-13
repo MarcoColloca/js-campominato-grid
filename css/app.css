@@ -1,4 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 
 body{
     background-color: rgb(31, 31, 31);
+}
+
+
+
+#grid{
+    margin: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.square{
+    width: 10%;
+    aspect-ratio: 1/1;
+    border: 1px solid white;
 }
