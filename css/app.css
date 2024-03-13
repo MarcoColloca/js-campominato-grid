@@ -32,15 +32,16 @@ body{
 .difficulty-label{
     color: white;
     margin-top: -20px;
-    margin-left: -30px;
-    padding-bottom: 20px;
+    margin-left: -18px;
+    padding-bottom: 15px;
     font-size: 20px;
 }
 
 #difficulty-selection{
     text-align: center;
     color: white;
-    background-color: black;    
+    background-color: black;   
+    padding: 2px 10px; 
 }
 
 
@@ -60,6 +61,14 @@ body{
     font-size: 15px;
 }
 
+
+#delete-grid{
+    padding: 5px 10px;
+    background-color: rgb(51, 0, 0);
+    color: white;
+    border-radius: 18px;
+    margin-left: -100px;
+}
 
 
 /* Grid and Squares */
