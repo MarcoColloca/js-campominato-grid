@@ -4,12 +4,14 @@ const gridDOMElement = document.getElementById('grid'); // object
 // console.log(gridDOMElement)
 
 const startButtonDOMElement = document.getElementById('generate-grid'); // object
-console.log(startButtonDOMElement);
+// console.log(startButtonDOMElement);
 
 const difficultySelectorDOMElement = document.getElementById('difficulty-selection')
-console.log(difficultySelectorDOMElement)
-console.log(difficultySelectorDOMElement.value)
+// console.log(difficultySelectorDOMElement)
+// console.log(difficultySelectorDOMElement.value)
 
+const restartButtonDOMElement = document.getElementById('delete-grid')
+console.log(restartButtonDOMElement)
 
 
 
@@ -92,4 +94,14 @@ startButtonDOMElement.addEventListener('click', function(){
 
     gridDOMElement.classList.add('active')
     //console.log(gridDOMElement.className)
+})
+
+
+
+
+restartButtonDOMElement.addEventListener('click', function(){
+
+    gridDOMElement.innerHTML= '';
+    gridDOMElement.classList.remove('active')
+
 })
