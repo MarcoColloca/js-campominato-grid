@@ -1,28 +1,17 @@
 console.log('JS Trial')
 
-const gridDOMElement = document.getElementById('grid'); // object
-// console.log(gridDOMElement)
 
-const startButtonDOMElement = document.getElementById('generate-grid'); // object
-// console.log(startButtonDOMElement);
+/// ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ Mie Funzioni ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ \\\
 
-const difficultySelectorDOMElement = document.getElementById('difficulty-selection')
-// console.log(difficultySelectorDOMElement)
-// console.log(difficultySelectorDOMElement.value)
-
-const restartButtonDOMElement = document.getElementById('delete-grid')
-// console.log(restartButtonDOMElement)
-
-
-
-startButtonDOMElement.addEventListener('click', function(){
+function gameClickStart(){
+    
     
     // console.log(gridDOMElement.className)
-    if(difficultySelectorDOMElement.value === 'hard' && gridDOMElement.className === ''){
+    if(difficultySelectorDOMElement.value === 'hard'){
 
         const hardGridSide = 10;
         const numOfCells = hardGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
-
+    
         for(let i = 0; i < numOfCells; i++){
             const cellNumber = i + 1;
             // console.log(cellNumber);
@@ -42,7 +31,7 @@ startButtonDOMElement.addEventListener('click', function(){
             })
         }
 
-    } else if(difficultySelectorDOMElement.value === 'medium' && gridDOMElement.className === ''){
+    } else if(difficultySelectorDOMElement.value === 'medium'){
 
         const mediumGridSide = 9;
         const numOfCells = mediumGridSide ** 2 // ** significa elevato a, quindi si ottiene 9 x 9    
@@ -66,7 +55,7 @@ startButtonDOMElement.addEventListener('click', function(){
             })
         }
 
-    } else if (difficultySelectorDOMElement.value === 'easy' && gridDOMElement.className === ''){
+    } else if (difficultySelectorDOMElement.value === 'easy'){
 
         const easyGridSide = 7;
         const numOfCells = easyGridSide ** 2 // ** significa elevato a, quindi si ottiene 7 x 7    
@@ -91,16 +80,41 @@ startButtonDOMElement.addEventListener('click', function(){
         }
     }
 
-    gridDOMElement.classList.add('active')
+    startButtonDOMElement.removeEventListener('click', gameClickStart);
     //console.log(gridDOMElement.className)
-})
+}
 
 
-
-
-restartButtonDOMElement.addEventListener('click', function(){
+function gameClickReset(){
 
     gridDOMElement.innerHTML= '';
-    gridDOMElement.classList.remove('active')
+    startButtonDOMElement.addEventListener('click', gameClickStart);
 
-})
+}
+
+
+/// ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ Mie Funzioni ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ \\\
+
+
+
+
+
+
+const gridDOMElement = document.getElementById('grid'); // object
+// console.log(gridDOMElement)
+
+const startButtonDOMElement = document.getElementById('generate-grid'); // object
+// console.log(startButtonDOMElement);
+
+const difficultySelectorDOMElement = document.getElementById('difficulty-selection')
+// console.log(difficultySelectorDOMElement)
+// console.log(difficultySelectorDOMElement.value)
+
+const restartButtonDOMElement = document.getElementById('delete-grid')
+// console.log(restartButtonDOMElement)
+
+
+
+startButtonDOMElement.addEventListener('click', gameClickStart);
+
+restartButtonDOMElement.addEventListener('click', gameClickReset);
