@@ -16,7 +16,7 @@ console.log(difficultySelectorDOMElement.value)
 startButtonDOMElement.addEventListener('click', function(){
     
     console.log(gridDOMElement.className)
-    if(difficultySelectorDOMElement.value === 'hard'){
+    if(difficultySelectorDOMElement.value === 'hard' && gridDOMElement.className === ''){
 
         const hardGridSide = 10;
         const numOfCells = hardGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
@@ -40,7 +40,7 @@ startButtonDOMElement.addEventListener('click', function(){
             })
         }
 
-    } else if(difficultySelectorDOMElement.value === 'medium'){
+    } else if(difficultySelectorDOMElement.value === 'medium' && gridDOMElement.className === ''){
 
         const mediumGridSide = 9;
         const numOfCells = mediumGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
@@ -64,7 +64,7 @@ startButtonDOMElement.addEventListener('click', function(){
             })
         }
 
-    } else if (difficultySelectorDOMElement.value === 'easy'){
+    } else if (difficultySelectorDOMElement.value === 'easy' && gridDOMElement.className === ''){
 
         const easyGridSide = 7;
         const numOfCells = easyGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
@@ -90,6 +90,6 @@ startButtonDOMElement.addEventListener('click', function(){
     }
 
 
-    //gridDOMElement.classList.add('hard')
+    gridDOMElement.classList.add('active')
     //console.log(gridDOMElement.className)
 })
