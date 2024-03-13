@@ -45,7 +45,7 @@ startButtonDOMElement.addEventListener('click', function(){
     } else if(difficultySelectorDOMElement.value === 'medium' && gridDOMElement.className === ''){
 
         const mediumGridSide = 9;
-        const numOfCells = mediumGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
+        const numOfCells = mediumGridSide ** 2 // ** significa elevato a, quindi si ottiene 9 x 9    
 
         for(let i = 0; i < numOfCells; i++){
             const cellNumber = i + 1;
@@ -69,7 +69,7 @@ startButtonDOMElement.addEventListener('click', function(){
     } else if (difficultySelectorDOMElement.value === 'easy' && gridDOMElement.className === ''){
 
         const easyGridSide = 7;
-        const numOfCells = easyGridSide ** 2 // ** significa elevato a, quindi si ottiene 10 x 10    
+        const numOfCells = easyGridSide ** 2 // ** significa elevato a, quindi si ottiene 7 x 7    
 
         for(let i = 0; i < numOfCells; i++){
             const cellNumber = i + 1;
