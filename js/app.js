@@ -15,4 +15,12 @@ for(let i = 0; i < numOfCells; i++){
     cellDOMElement.innerHTML = cellNumber;
 
     gridDOMElement.appendChild(cellDOMElement)
+
+
+    cellDOMElement.addEventListener('click', function(){
+
+        console.log('Hai clickato la cella numero ', cellNumber)
+
+        cellDOMElement.classList.toggle('bg-azure')
+    })
 }
