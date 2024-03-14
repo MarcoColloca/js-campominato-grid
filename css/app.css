@@ -27,6 +27,22 @@ body{
 }
 
 
+
+
+/* Header*/
+
+header{
+    margin-top: 20px;
+}
+
+.title{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+
+
+
 /* Generating Section  */
 
 .difficulty-label{
@@ -53,10 +69,16 @@ body{
     align-items: center;
 }
 
+#generate-grid,
+#delete-grid{
+    cursor: pointer;
+}
+
+
 
 #generate-grid{
     padding: 10px;
-    background-color: black;
+    background-color: rgb(36, 36, 36);
     color: white;
     font-size: 15px;
 }
@@ -69,6 +91,19 @@ body{
     border-radius: 18px;
     margin-left: -100px;
 }
+
+
+
+#generate-grid:hover{
+background-color: rgb(0, 0, 0);
+}
+
+
+#delete-grid:hover{
+    background-color: rgb(112, 0, 0);
+
+}
+
 
 
 /* Grid and Squares */
@@ -87,7 +122,7 @@ body{
     align-items: center;
     background-color: rgb(31, 31, 31);
     color: white;
-
+    cursor: pointer;
 }
 
 
