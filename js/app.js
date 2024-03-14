@@ -20,6 +20,9 @@ function getSize() {
     return size
 }
 
+
+
+
 // Funzione di generazione della Griglia
 function gameClickStart(){
     /*
@@ -51,12 +54,17 @@ function gameClickStart(){
         cellDOMElement.classList.add(divClass) //object
         gridDOMElement.appendChild(cellDOMElement) ////object
 
-        cellDOMElement.addEventListener('click', function(){
-        
-            console.log('Hai clickato la cella numero ', cellNumber)
+        // Funzione che determina cosa accade quando avviene un click sulla cella della griglia
+        function cellClick(){
     
+            console.log('Hai clickato la cella numero ', cellNumber)
+        
             cellDOMElement.classList.toggle('bg-azure') //object
-        })
+            
+            cellDOMElement.removeEventListener('click', cellClick)
+        }
+
+        cellDOMElement.addEventListener('click', cellClick)
     }
 
     startButtonDOMElement.removeEventListener('click', gameClickStart);
@@ -69,6 +77,9 @@ function gameClickReset(){
     startButtonDOMElement.addEventListener('click', gameClickStart);
 
 }
+
+
+
 
 
 /// ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ Mie Funzioni ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ \\\
