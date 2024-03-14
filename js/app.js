@@ -3,10 +3,32 @@ console.log('JS Trial')
 
 /// ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ Mie Funzioni ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ \\\
 
-function gameClickStart(){
+// Funzione per la validazione del numero di cella della griglia
+function getSize() {
+    
+    if(difficultySelectorDOMElement.value === '7'){
+        size = 7;
+    } else if(difficultySelectorDOMElement.value === '9'){
+        size = 9;
+    } else if((difficultySelectorDOMElement.value === '10' )){
+        size = 10;
+    } else{
+        alert('NON GIOCARE COL MIO CODICE!')
+        startButtonDOMElement.removeEventListener('click', gameClickStart);
+    }
 
+    return size
+}
+
+// Funzione di generazione della Griglia
+function gameClickStart(){
+    /*
     let gridSide = parseInt(difficultySelectorDOMElement.value); //number
     const numOfCells = gridSide ** 2 // number → ** significa elevato a, quindi si ottiene 10 x 10    
+    */
+
+    let gridSide = getSize();
+    const numOfCells = gridSide ** 2 // number → ** significa elevato a, quindi si ottiene 10 x 10  
 
     for(let i = 0; i < numOfCells; i++){
 
@@ -40,7 +62,7 @@ function gameClickStart(){
     startButtonDOMElement.removeEventListener('click', gameClickStart);
 }
 
-
+// Funzione per il Reset della Griglia
 function gameClickReset(){
 
     gridDOMElement.innerHTML= ''; //string
